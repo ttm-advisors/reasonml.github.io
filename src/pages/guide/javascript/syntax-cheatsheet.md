@@ -7,11 +7,11 @@ We've worked very hard to make Reason look like JS while preserving OCaml's grea
 
 ### Let Binding
 
-JavaScript                |   Reason
---------------------------|--------------------------------
-`const x = 5;`              |  `let x = 5;`
-`var x = y;`                |  No equivalent (thankfully)
-`let x = 5; x = x + 1;`     |  `let x = ref(5); x := x^ + 1;`
+JavaScript                |   Reason                        | OCaml
+--------------------------|--------------------------------|-------------------------------------------
+`const x = 5;`              |  `let x = 5;`              |  `let x = 5;;`   
+`var x = y;`                |  No equivalent (thankfully) |  No equivalent
+`let x = 5; x = x + 1;`     |  `let x = ref(5); x := x^ + 1;` | `let x = ref 5;;let _ = x := ((!x) + 1);;`
 
 ### String & Char
 
