@@ -26,9 +26,9 @@ Characters are strings      |  `'a'`
 
 JavaScript                |   Reason                        | OCaml
 --------------------------|--------------------------------|-------------------------------------------
-`true`, `false`                      |  `true`, `false` \* |
-`!true`                              |  Same               |
-`||`, `&&`, `<=`, `>=`, `<`, `>`     |  Same               |
+`true`, `false`                      |  `true`, `false` \* | Same
+`!true`                              |  Same               | Same
+`||`, `&&`, `<=`, `>=`, `<`, `>`     |  Same               | Same
 `a === b`, `a !== b`                 |  Same as JS         | `a == b`, `a != b`
 No deep equality (recursive compare) |  `a == b`, `a != b` | `a = b`, `a <> b`
 `a == b`                             |  No equality with implicit casting (thankfully)  |  No equality with implicit casting
