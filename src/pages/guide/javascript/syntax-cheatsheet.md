@@ -171,7 +171,14 @@ JavaScript                |   Reason
 In Reason, "sequence expressions" are created with `{}` and evaluate to their last statement. In JavaScript, this can be simulated via an immediately-invoked function expression (since function bodies have their own local scope).
 
 <table>
-  <thead><tr> <th scope="col"><p >JavaScript</p></th> <th scope="col"><p>Reason</p></th></tr></thead>
+  <thead>
+    <tr>
+      <th scope="col"><p >JavaScript</p></th>
+      <th scope="col"><p>Reason</p></th>
+      <th scope="col"><p>OCaml</p></th>
+    </tr>
+  </thead>
+
   <tr>
     <td>
       <pre>
@@ -181,13 +188,26 @@ let res = (function() {
   return x + y;
 })();</pre>
     </td>
+
     <td>
-      <pre>
+
+<pre>
 let res = {
   let x = 23;
   let y = 34;
   x + y
-};</pre>
+};
+</pre>
+
+    </td>
+    <td>
+<pre>
+let myFun x y =
+  let doubleX = x + x in
+  let doubleY = y + y in
+  doubleX + doubleY;;
+</pre>
+
     </td>
   </tr>
 </table>
