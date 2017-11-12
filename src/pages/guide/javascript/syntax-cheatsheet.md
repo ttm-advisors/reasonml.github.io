@@ -38,7 +38,7 @@ No deep equality (recursive compare) |  `a == b`, `a != b` | `a = b`, `a <> b`
 ### Numbers
 
 JavaScript          |   Reason     |     OCaml
---------------------|--------------------------------
+--------------------|--------------|-----------------
 `3` \*              |  Same \*      | Same \*
 `3.1415`            |  Same | Same
 `3 + 4`             |  Same | Same
