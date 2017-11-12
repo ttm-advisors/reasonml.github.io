@@ -24,14 +24,14 @@ Characters are strings      |  `'a'`
 
 ### Boolean
 
-JavaScript                |   Reason
---------------------------|--------------------------------
-`true`, `false`                      |  `true`, `false` \*
-`!true`                              |  Same
-`||`, `&&`, `<=`, `>=`, `<`, `>`     |  Same
-`a === b`, `a !== b`                 |  Same
-No deep equality (recursive compare) |  `a == b`, `a != b`
-`a == b`                             |  No equality with implicit casting (thankfully)
+JavaScript                |   Reason                        | OCaml
+--------------------------|--------------------------------|-------------------------------------------
+`true`, `false`                      |  `true`, `false` \* |
+`!true`                              |  Same               |
+`||`, `&&`, `<=`, `>=`, `<`, `>`     |  Same               |
+`a === b`, `a !== b`                 |  Same as JS         | `a == b`, `a != b`
+No deep equality (recursive compare) |  `a == b`, `a != b` | `a = b`, `a <> b`
+`a == b`                             |  No equality with implicit casting (thankfully)  |  No equality with implicit casting
 
 \* This is the Reason spiritual equivalent; it doesn't mean it compiles to JS' `true`/`false`! To compile to the latter, use `Js.true_`/`Js.false_`. See [here](/guide/language/boolean#usage).
 
@@ -52,7 +52,7 @@ JavaScript                |   Reason
 JavaScript                |   Reason                        | OCaml
 --------------------------|--------------------------------|-------------------------------------------
 no static types           |  `type point = {x: int, mutable y: int}`| `type point = {x: int; mutable y: int;};;`
-`{x: 30, y: 20}`          |  Same \*  | { x = 30; y = 20 } \* 
+`{x: 30, y: 20}`          |  Same as JS \*  | `{ x = 30; y = 20 }` \*
 `point.x`                 |  Same     | Same
 `point.y = 30;`           |  Same     | Same
 `{...point, x: 30}`       |  Same as JS     |  `{ point with x = 30 }`
@@ -191,3 +191,8 @@ let res = {
     </td>
   </tr>
 </table>
+
+### Comments
+JavaScript                |   Reason                        | OCaml
+--------------------------|--------------------------------|-------------------------------------------
+`/* JS /*nest*/ */`       | `/* Reason /*nest*/ */`         | `(* OCaml (*nest*) *)`
