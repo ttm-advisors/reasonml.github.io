@@ -28,24 +28,24 @@ JavaScript                |   Reason                        | OCaml
 --------------------------|--------------------------------|-------------------------------------------
 `true`, `false`                      |  `true`, `false` \* | Same
 `!true`                              |  Same               | Same
-`||`, `&&`, `<=`, `>=`, `<`, `>`     |  Same               | Same
+&#124;&#124;, `&&`, `<=`, `>=`, `<`, `>`     |  Same          |
 `a === b`, `a !== b`                 |  Same as JS         | `a == b`, `a != b`
 No deep equality (recursive compare) |  `a == b`, `a != b` | `a = b`, `a <> b`
 `a == b`                             |  No equality with implicit casting (thankfully)  |  No equality with implicit casting
 
 \* This is the Reason spiritual equivalent; it doesn't mean it compiles to JS' `true`/`false`! To compile to the latter, use `Js.true_`/`Js.false_`. See [here](/guide/language/boolean#usage).
 
-### Number
+### Numbers
 
-JavaScript                |   Reason
---------------------------|--------------------------------
-`3`                         |  Same \*
-`3.1415`                    |  Same
-`3 + 4`                     |  Same
-`3.0 + 4.5`                 |  `3.0 +. 4.5`
-`5 % 3`                     |  `5 mod 3`
+JavaScript          |   Reason     |     OCaml
+--------------------|--------------------------------
+`3` \*              |  Same \*      | Same \*
+`3.1415`            |  Same | Same
+`3 + 4`             |  Same | Same
+`3.0 + 4.5`         |  `3.0 +. 4.5` | `3.0 +. 4.5`
+`5 % 3`             |  `5 mod 3` | `5 mod 3`
 
-\* JS has no distinction between integer and float.
+\* JS has no distinction between integer and float; OCaml, and hence ReasonML, differentiate between integers and floats.
 
 ### Object/Record
 
