@@ -170,47 +170,34 @@ JavaScript                |   Reason
 
 In Reason, "sequence expressions" are created with `{}` and evaluate to their last statement. In JavaScript, this can be simulated via an immediately-invoked function expression (since function bodies have their own local scope).
 
-<table>
-  <thead>
+  <table>
+    <thead><tr> <th scope="col"><p >JavaScript</p></th> <th scope="col"><p>Reason</p></th><th scope="col"><p>OCaml</p></th></tr></thead>
     <tr>
-      <th scope="col"><p >JavaScript</p></th>
-      <th scope="col"><p>Reason</p></th>
-      <th scope="col"><p>OCaml</p></th>
+      <td>
+        <pre>
+  const myFun = (x, y) => {
+    const doubleX = x + x;
+    const doubleY = y + y;
+    return doubleX + doubleY
+  };</pre>
+      </td>
+      <td>
+        <pre>
+  let myFun = (x, y) => {
+    let doubleX = x + x;
+    let doubleY = y + y;
+    doubleX + doubleY
+  };</pre>
+      </td>
+      <td>
+        <pre>
+  let myFun x y =
+    let doubleX = x + x in
+    let doubleY = y + y in
+    doubleX + doubleY;;</pre>
+      </td>
     </tr>
-  </thead>
-
-  <tr>
-    <td>
-      <pre>
-let res = (function() {
-  const x = 23;
-  const y = 34;
-  return x + y;
-})();</pre>
-    </td>
-
-    <td>
-
-<pre>
-let res = {
-  let x = 23;
-  let y = 34;
-  x + y
-};
-</pre>
-
-    </td>
-    <td>
-<pre>
-let myFun x y =
-  let doubleX = x + x in
-  let doubleY = y + y in
-  doubleX + doubleY;;
-</pre>
-
-    </td>
-  </tr>
-</table>
+  </table>
 
 ### Comments
 JavaScript                |   Reason                        | OCaml
