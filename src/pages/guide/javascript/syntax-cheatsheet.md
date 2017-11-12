@@ -49,15 +49,15 @@ JavaScript                |   Reason
 
 ### Object/Record
 
-JavaScript                |   Reason
---------------------------|--------------------------------
-no static types           |  `type point = {x: int, mutable y: int}`
-`{x: 30, y: 20}`          |  Same \*
-`point.x`                 |  Same
-`point.y = 30;`           |  Same
-`{...point, x: 30}`       |  Same
+JavaScript                |   Reason                        | OCaml
+--------------------------|--------------------------------|-------------------------------------------
+no static types           |  `type point = {x: int, mutable y: int}`| `type point = {x: int; mutable y: int;};;`
+`{x: 30, y: 20}`          |  Same \*  | { x = 30; y = 20 } \* 
+`point.x`                 |  Same     | Same
+`point.y = 30;`           |  Same     | Same
+`{...point, x: 30}`       |  Same as JS     |  `{ point with x = 30 }`
 
-\* This is the Reason spiritual equivalent; it doesn't mean it compiles to JS' object! To compile to the latter, see [here](/guide/language/object#tip--tricks).
+\* These are the Reason and OCaml spiritual equivalents; it doesn't mean it compiles to JS' object! To compile to the latter, see [here](/guide/language/object#tip--tricks).
 
 ### Array
 
